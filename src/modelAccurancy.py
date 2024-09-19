@@ -53,7 +53,7 @@ try:
     testAccuracy(model, folder_Sitobion, "Sitobion-avenae", confidence)
 
     # Calcula e exibe a média de confiança para cada classe
-    print(strColored("\n>> Precisão do modelo para cada classe", 'white'))
+    print(strColored(f"\n>> Precisão do modelo {resp} para cada classe", 'white'))
     print(perAccuracy("Metopolophium", confidence))
     print(perAccuracy("Rhopalosiphum-padi", confidence))
     print(perAccuracy("Schizaphis-graminum", confidence))

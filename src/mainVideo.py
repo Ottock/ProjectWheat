@@ -42,7 +42,7 @@ while True:
 
         # Realiza a previsão no frame capturado
         try:
-            response = model.predict(frame, confidence=85, overlap=30).json()
+            response = model.predict(frame, confidence=50, overlap=30).json()
             predictions = response['predictions']
 
             # Variáveis para armazenar o número de pragas identificadas
@@ -99,26 +99,24 @@ while True:
                 cv2.imshow("Project Wheat 6.0 - Detection", frame)
 
                 # Salva a imagem capturada
-                image_path = captureImage(frame)
-
-                # Enviar e-mail com a imagem capturada
-                pragas_detectadas = f""">> {time.ctime(time.time())}\n
-                \nPragas identificadas: \n
-                Pulgão-das-folhas (Metopolophium dirhodum): {Metopolophium}
-                Piolho-da-cereja-brava (Rhopalosiphum padi): {RhopalosiphumPadi}
-                Pulgão-verde-dos-cereais (Schizaphis graminum): {SchizaphisGraminum}
-                Pulgão-preto-dos-cereais (Sipha maydis): {SiphaMaydis}
-                Pulgão-da-espiga (Sitobion avenae): {SitobionAvenae}
-                """
+                image_path = captureImage(frame, "PragaDetectada.jpg")
 
                 # Envia o e-mail com a foto
                 try:
                     sendEmail(
                         "ottokuchmargo@gmail.com",
                         "Pragas Identificadas",
-                        pragas_detectadas,
-                        image_path
+                        f""">> {time.ctime(time.time())}\n
+                                  \nPragas identificadas: \n
+                                  Pulgão-das-folhas (Metopolophium dirhodum): {Metopolophium}
+                                  Piolho-da-cereja-brava (Rhopalosiphum padi): {RhopalosiphumPadi}
+                                  Pulgão-verde-dos-cereais (Schizaphis graminum): {SchizaphisGraminum}
+                                  Pulgão-preto-dos-cereais (Sipha maydis): {SiphaMaydis}
+                                  Pulgão-da-espiga (Sitobion avenae): {SitobionAvenae}
+                                  """,
+                                  image_path
                     )
+
                 except Exception as e:
                     print(strColored(f">> ERRO ao enviar email: {e}", 'red'))
 

@@ -21,7 +21,7 @@ def initRoboflow(version):
     # Roboflow client API key
     api_key = "8UjXP8kvalxT275T5XgN"
     workspace_name = "projeto-ic-gcsp"
-    project_name = "pragas-ic-gcsp-m8j84"
+    project_name = "ic-pragas"
 
     try:
         # Inicializa o cliente Roboflow
@@ -70,7 +70,7 @@ def testAccuracy(version_model, folder_path, clas, confidence_dict):
             else:
                 # Início da análise do modelo
                 try:
-                    response = model.predict(image_path, confidence=40, overlap=30).json()
+                    response = model.predict(image_path, confidence=50, overlap=30).json()
                     predictions = response['predictions']
 
                     for pred in predictions:
@@ -116,19 +116,19 @@ def perAccuracy(clas, confidence_dict):
         return strColored(f">> {clas}: {media_conf:.2f}", 'cyan')
 
 
-def captureImage(frame, path="capturedImage.jpg"):
+def captureImage(frame, imageName="capturedImage.jpg"):
     """
-    captureImage(frame, path="capturedImage.jpg"): Função que captura um frame e o armazena em caminho especifico.
+    captureImage(frame, imageName="capturedImage.jpg"): Função que captura um frame e o armazena com um nome especifico.
 
     :param frame: frame a ser capturado.
-    :param path: caminho e nome a ser armazenada a imagem.
+    :param imageName: nome do frame a ser capturado.
     :return: caminho armazenado.
     """
 
-    cv2.imwrite(path, frame)
-    print(strColored(f">> Imagem salva em: {path}", 'blue'))
+    cv2.imwrite(imageName, frame)
+    print(strColored(f">> Imagem salva em: {imageName}", 'blue'))
 
-    return path
+    return imageName
 
 def sendEmail(email_receiver, email_subject, email_body, image_path=None):
     """

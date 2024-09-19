@@ -32,7 +32,7 @@ if image is None:
 else:
     try:
         # Previsões feitas pelo modelo
-        response = model.predict(image_path, confidence=86, overlap=30).json()
+        response = model.predict(image_path, confidence=50, overlap=30).json()
         predictions = response['predictions']
 
         # Extrai informações das previsões do modelo
