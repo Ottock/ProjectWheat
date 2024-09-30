@@ -142,6 +142,8 @@ def sendEmail(email_receiver, email_subject, email_body, image_path=None):
     """
 
     # Informações do E-mail do emissor e senha da conta
+    # email: wheatProject024@gmail.com
+    # password: Project1234
     email_sender = "wheatProject024@gmail.com"
     email_password = "fmxw tqgt vvpa nieu"
     if not email_password:
