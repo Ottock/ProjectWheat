@@ -91,7 +91,7 @@ Para garantir que todas as dependências do projeto sejam instaladas corretament
 
 1. Clone do repositório:
 ```
-git clone https://github.com/seu-usuario/projeto-identificacao-pragas.git
+git clone https://github.com/Ottock/projeto-identificacao-pragas.git
 ```
 
 2. Entre no diretório do projeto:
