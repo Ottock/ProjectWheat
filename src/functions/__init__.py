@@ -1,4 +1,4 @@
-# functions/__init__.py
+# functions/main.py
 
 # Imports
 import os
@@ -20,7 +20,7 @@ def initRoboflow(version):
     """
     # Roboflow client API key
     api_key = "8UjXP8kvalxT275T5XgN"
-    workspace_name = "projeto-ic-gcsp"
+    workspace_name = "projeto-ic"
     project_name = "ic-pragas"
 
     try:

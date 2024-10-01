@@ -7,6 +7,7 @@ import matplotlib.pyplot as plt
 
 from functions import initRoboflow, strColored, sendEmail
 
+# Main
 try:
     resp = int(input(strColored(">> Digite qual versão do modelo deseja testar: ", 'white')))
 
