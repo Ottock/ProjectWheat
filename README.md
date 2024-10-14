@@ -118,6 +118,6 @@ Após configurar o ambiente e instalar as dependências, execute o projeto segui
 `cd src`
 
 2. Execute o sistema:
-`python main.py`
+`python src/main.py`
 
 Agora o sistema estará em funcionamento, monitorando as imagens para detecção de pragas em tempo real.
