@@ -18,11 +18,11 @@ except:
     exit(0)
 
 # Path da imagem para ser testada pelo modelo
-image_path = "database/Metopolophium/18.jpg"
+#image_path = "database/Metopolophium/18.jpg"
 #image_path = "database/Rhopalosiphum padi/18.jpg"
 #image_path = "database/Schizaphis graminum/18.jpg"
-#image_path = "database/Sipha maydis/18.jpg"
-#image_path = "database/Sitobion avenae/18.jpg"
+#image_path = "database/Sipha maydis/6.jpg"
+image_path = "database/Sitobion avenae/3.jpg"
 
 #image_path = "../database/teste.png"
 image = cv2.imread(image_path)
