@@ -6,9 +6,13 @@ import functions
 
 # Roboflow Model
 # API Key
-rf = Roboflow(api_key="8UjXP8kvalxT275T5XgN")
+api_key = "8UjXP8kvalxT275T5XgN"
+workspace_name = "projeto-ic"
+project_name = "ic-pragas"
+rf = Roboflow(api_key)
+
 # Project Acess
-project = rf.workspace("projeto-ic-gcsp").project("pragas-ic-gcsp-m8j84")
+project = rf.workspace(workspace_name).project(project_name)
 resp = int(input(functions.strColored(">> Digite qual versão do modelo deseja baixar: ", 'blue')))
 
 try:
