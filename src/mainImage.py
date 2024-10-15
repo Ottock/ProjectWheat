@@ -101,7 +101,7 @@ else:
 
         # Envia o e-mail com a imagem anexada
         sendEmail(
-            "ottokuchmargo@gmail.com",
+            "", # Email Reciver
             "Pragas Identificadas",
             f">> {time.ctime(currentTime)}\n" +
             f"\nPragas identificadas: \n" +
