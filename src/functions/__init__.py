@@ -130,7 +130,6 @@ def captureImage(frame, imageName="capturedImage.jpg"):
 
     return imageName
 
-
 def sendEmail(email_receiver, email_subject, email_body, image_path=None):
     """
     sendEmail(email_receiver, email_subject, email_body, image_path): Função que envia um e-mail utilizando o servidor SMTP do Gmail.
@@ -142,8 +141,11 @@ def sendEmail(email_receiver, email_subject, email_body, image_path=None):
     :return: None.
     """
 
-    email_sender = ""
-    email_password = ""  # Use uma senha de aplicativo se a verificação em duas etapas estiver ativada.
+    # Informações do E-mail do emissor e senha da conta
+    # email: wheatProject024@gmail.com
+    # password: Project1234
+    email_sender = "projectwheat50@gmail.com"
+    email_password = "uevv bake eqvr psbq"
 
     # Verifica se o email do destinatário está vazio
     if not email_receiver:
@@ -180,7 +182,7 @@ def sendEmail(email_receiver, email_subject, email_body, image_path=None):
         server.sendmail(email_sender, email_receiver, text)
         server.quit()
         print(strColored(">> E-mail enviado com sucesso", 'green'))
-    except smtplib.SMTPException as e:
+    except Exception as e:
         print(strColored(f">> ERRO: Falha ao enviar o e-mail: {str(e)}", 'red'))
 
 
